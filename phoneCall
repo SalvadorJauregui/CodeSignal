@@ -12,6 +12,8 @@ Example
 For min1 = 3, min2_10 = 1, min11 = 2, and s = 20, the output should be
 phoneCall(min1, min2_10, min11, s) = 14.
 
+
+/***** SOLUTION *****/
 int phoneCall(int min1, int min2_10, int min11, int s) {
     final int SECOND_BATCH = 9;
     int totalMinutes = 1;
