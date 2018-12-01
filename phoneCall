@@ -1,0 +1,35 @@
+https://app.codesignal.com/arcade/code-arcade/intro-gates/mZAucMXhNMmT7JWta/description
+
+Some phone usage rate may be described as follows:
+
+first minute of a call costs min1 cents,
+each minute from the 2nd up to 10th (inclusive) costs min2_10 cents
+each minute after 10th costs min11 cents.
+You have s cents on your account before the call. What is the duration of the longest call (in minutes rounded down to the nearest integer) you can have?
+
+Example
+
+For min1 = 3, min2_10 = 1, min11 = 2, and s = 20, the output should be
+phoneCall(min1, min2_10, min11, s) = 14.
+
+int phoneCall(int min1, int min2_10, int min11, int s) {
+    final int SECOND_BATCH = 9;
+    int totalMinutes = 1;
+    
+    /* First minute */
+    if (s >= min1){
+        s-=min1;
+    }else
+        return 0;
+    
+    /* Second batch */
+    if (s >= min2_10 * SECOND_BATCH){
+        s-= min2_10 * SECOND_BATCH;
+        totalMinutes+=SECOND_BATCH;
+    }else
+        return totalMinutes + s / min2_10;
+    
+    /* Third batch */
+    return totalMinutes + s / min11;
+}
+
