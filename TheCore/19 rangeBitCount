@@ -1,0 +1,30 @@
+https://app.codesignal.com/arcade/code-arcade/corner-of-0s-and-1s/eC2Zxu5H5SnuKxvPT/description
+
+You are given two numbers a and b where 0 ≤ a ≤ b. Imagine you construct an array of all the integers
+from a to b inclusive. You need to count the number of 1s in the binary representations of all the numbers in the array.
+
+
+/***** SOLUTION 1 *****/
+int rangeBitCount(int a, int b) {
+    int c = 0, count = 0;
+    
+    for (; a<=b; a++){
+        c = a;        
+        while(c > 0){
+            if((c & 0x1) == 1)
+                ++count;
+            c>>=1;
+        }
+    }
+    return count;
+}
+
+
+/***** SOLUTION 2 *****/
+int rangeBitCount(int a, int b) {
+    int c = 0;
+    for (int i = a; i<=b; i++) {
+        c += Integer.bitCount(i);
+    }
+    return c;
+}
