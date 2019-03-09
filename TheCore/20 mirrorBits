@@ -1,0 +1,15 @@
+
+
+https://app.codesignal.com/arcade/code-arcade/corner-of-0s-and-1s/e3zfPNTwTa9qTQzcX/description
+
+Reverse the order of the bits in a given integer.
+
+int mirrorBits(int a) {
+    int reverseNumber = 0;
+    while(a > 0){
+        reverseNumber<<=1;
+        reverseNumber |= (a & 1);                
+        a>>=1;
+    }
+    return  reverseNumber;
+}
