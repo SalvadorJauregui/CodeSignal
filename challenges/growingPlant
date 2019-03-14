@@ -1,0 +1,6 @@
+https://app.codesignal.com/challenge/hBbuBTMsqMPfDwL6T
+
+
+int growingPlant(int u, int d, int z) {
+   return u > z ? 1: (int)Math.ceil((1.0*z-d)/(u-d));
+}
