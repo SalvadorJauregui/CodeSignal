@@ -1,0 +1,8 @@
+https://app.codesignal.com/challenge/gLjgdkHdJyJQb2M8X
+
+
+boolean isoscelesTriangle(int[] s) {
+    return s[0] == s[1] ||
+            s[0] == s[2] ||
+            s[1] == s[2];
+}
