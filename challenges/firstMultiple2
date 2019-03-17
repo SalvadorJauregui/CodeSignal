@@ -1,0 +1,17 @@
+https://app.codesignal.com/challenge/ucvEKrLCm2m8PCPm2
+
+Find the smallest integer not less than the given limit which is divisible by
+at least one integer from the given array.
+
+Example
+
+For divisors = [2, 3, 4] and start = 13, the output should be
+firstMultiple2(divisors, start) = 14.
+
+
+int firstMultiple2(int[] divisors, int start) {
+    for (int i : divisors)
+        if (start % i == 0)
+            return start;
+    return firstMultiple2(divisors, ++start);
+}
