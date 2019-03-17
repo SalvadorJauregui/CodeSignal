@@ -1,0 +1,13 @@
+https://app.codesignal.com/arcade/code-arcade/loop-tunnel/hBw5BJiZ4LmXcy92u
+
+Given integers n, l and r, find the number of ways to represent n as a sum of two integers A and B such that l ≤ A ≤ B ≤ r.
+Example
+
+For n = 6, l = 2, and r = 4, the output should be
+countSumOfTwoRepresentations2(n, l, r) = 2.
+
+
+/***** Solution *****/
+int countSumOfTwoRepresentations2(int n, int l, int r) {
+    return Math.max(n/2+1-Math.max(l, Math.max(n-r,0)),0);
+}
