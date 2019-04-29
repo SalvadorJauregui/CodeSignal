@@ -32,22 +32,14 @@ Guaranteed constraints:
 
 boolean increaseNumberRoundness(int n) {
     
-    /* remove the trailing zeros */
-    int digit  = 0;
-    while(n > 0 && digit == 0){
-        digit = n % 10 ;
-        n /= 10;
-    }
+    /* remove the trailing zeros */       
+    int digit = 0;
+    for (; n > 0 && digit == 0; digit = n % 10, n /= 10);
     
     /* If exist a zero it can be swapped */
-    while (n > 0){
-        digit = n % 10;
+    for (; n > 0; digit = n % 10, n /= 10)
         if (digit == 0)
-            return true;
-        n /= 10;
-    }
+            return true;   
     
     return false;
 }
-
-
